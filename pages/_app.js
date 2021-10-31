@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import styled, { ThemeProvider } from "styled-components";
 // import ColorModeButton from "../components/ColorModeButton";
-// import Header from "../components/Header";
+import { Header } from "../components";
 import GlobalStyle from "../styles/GlobalStyle";
 import baseTheme from "../styles/theme";
 
@@ -58,7 +58,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <GlobalStyle />
       {/* <ColorModeButton mode={mode} setMode={setNextMode} /> */}
-      {/* <Header /> */}
+      <Header />
       <LayoutContainer>
         <Component {...pageProps} />
       </LayoutContainer>
