@@ -1,5 +1,5 @@
 {
-  "name": "my-site",
+  "name": "site",
   "private": true,
   "scripts": {
     "dev": "next dev",
