@@ -124,7 +124,7 @@ export const HeaderContainer = styled.header`
 
 const SCROLL_THRESHOLD = 120;
 
-export const Header = () => {
+export const Header = (props) => {
   const [isAtTop, setIsAtTop] = useState(true);
 
   useEventListener(
@@ -142,7 +142,7 @@ export const Header = () => {
   );
 
   return (
-    <HeaderContainer isAtTop={isAtTop}>
+    <HeaderContainer isAtTop={isAtTop} {...props}>
       <Link href="/" passHref>
         <StyledAnchor>
           <Avatar />

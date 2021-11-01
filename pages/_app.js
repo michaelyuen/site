@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import styled, { ThemeProvider } from "styled-components";
-// import ColorModeButton from "../components/ColorModeButton";
-import { Header } from "../components";
+import { ColorModeButton, Header } from "../components";
 import GlobalStyle from "../styles/GlobalStyle";
 import baseTheme from "../styles/theme";
 
@@ -38,13 +37,13 @@ export default function App({ Component, pageProps }) {
     }
   }, []);
 
-  // const setNextMode = () => {
-  //   let nextModeIndex = modes.indexOf(mode) + 1;
-  //   if (nextModeIndex >= modes.length) {
-  //     nextModeIndex = 0;
-  //   }
-  //   setMode(modes[nextModeIndex]);
-  // };
+  const setNextMode = () => {
+    let nextModeIndex = modes.indexOf(mode) + 1;
+    if (nextModeIndex >= modes.length) {
+      nextModeIndex = 0;
+    }
+    setMode(modes[nextModeIndex]);
+  };
   const theme = getTheme(mode);
 
   return (
@@ -57,7 +56,7 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <GlobalStyle />
-      {/* <ColorModeButton mode={mode} setMode={setNextMode} /> */}
+      <ColorModeButton mode={mode} setMode={setNextMode} />
       <Header />
       <LayoutContainer>
         <Component {...pageProps} />
