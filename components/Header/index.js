@@ -152,7 +152,7 @@ export const Header = () => {
           </h1>
         </StyledAnchor>
       </Link>
-      <Nav items={navItems} />
+      {/* <Nav items={navItems} /> */}
     </HeaderContainer>
   );
 };
