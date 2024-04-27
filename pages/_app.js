@@ -1,5 +1,4 @@
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import styled, { ThemeProvider } from "styled-components";
@@ -59,7 +58,6 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Analytics />
-      <SpeedInsights />
       <GlobalStyle />
       <ColorModeButton mode={mode} setMode={setNextMode} />
       <Header />
