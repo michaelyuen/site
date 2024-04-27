@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function Home() {
   return (
@@ -33,11 +33,12 @@ export default function Home() {
         <a href="https://www.resy.com" rel="noreferrer" target="_blank">
           resy.com
         </a>
-        . Read more on{" "}
+        .
+        {/* Read more on{" "}
         <Link href="/work">
           <a>my work page</a>
         </Link>
-        .
+        . */}
       </p>
       <p>
         Another hobby I would like take up is writing, so naturally there must

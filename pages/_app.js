@@ -8,7 +8,8 @@ import baseTheme from "../styles/theme";
 const LayoutContainer = styled.main`
   padding: ${({ theme }) => theme.space[4]}px;
   margin: 0 auto;
-  max-width: ${({ theme }) => theme.sizes.maxWidth};
+  max-width: ${({ fullWidth, theme }) =>
+    fullWidth ? "1440px" : theme.sizes.maxWidth};
   -webkit-overflow-scrolling: touch;
 
   > * {
@@ -58,7 +59,7 @@ export default function App({ Component, pageProps }) {
       <GlobalStyle />
       <ColorModeButton mode={mode} setMode={setNextMode} />
       <Header />
-      <LayoutContainer>
+      <LayoutContainer fullWidth={pageProps?.componentKey === "our-adventures"}>
         <Component {...pageProps} />
       </LayoutContainer>
     </ThemeProvider>
