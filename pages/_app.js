@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import styled, { ThemeProvider } from "styled-components";
@@ -56,6 +57,7 @@ export default function App({ Component, pageProps }) {
           content="👋🏻 I'm Michael but some people call me my. I love to create order. I am a 👨🏻‍🌾 human bean and software engineer."
         />
       </Head>
+      <Analytics />
       <GlobalStyle />
       <ColorModeButton mode={mode} setMode={setNextMode} />
       <Header />
