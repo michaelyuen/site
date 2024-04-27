@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import PhotoAlbum from "react-photo-album";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 export async function getStaticProps() {
   const res = await fetch(
@@ -34,6 +36,7 @@ export async function getStaticProps() {
 export default function OurAdventures({ photos }) {
   const [showAlbum, setShowAlbum] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [index, setIndex] = useState(-1);
 
   useEffect(() => {
     if (showError) {
@@ -59,7 +62,19 @@ export default function OurAdventures({ photos }) {
         <span>our</span>Adventures
       </h1>
       {showAlbum ? (
-        <PhotoAlbum layout="rows" photos={photos} />
+        <>
+          <PhotoAlbum
+            layout="rows"
+            photos={photos}
+            onClick={({ index: current }) => setIndex(current)}
+          />
+          <Lightbox
+            index={index}
+            close={() => setIndex(-1)}
+            open={index >= 0}
+            slides={photos}
+          />
+        </>
       ) : (
         <div>
           <form autoComplete="off" onSubmit={onSubmit}>
