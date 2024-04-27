@@ -64,7 +64,8 @@ export default function OurAdventures({ photos }) {
         <div>
           <form autoComplete="off" onSubmit={onSubmit}>
             <label style={{ display: "flex", flexDirection: "column" }}>
-              Enter Password: (hint - where we went on our first "date")
+              Enter Password: (hint - where we went on our first
+              &ldquo;date&rdquo;)
               <input
                 autoComplete="off"
                 type="password"
