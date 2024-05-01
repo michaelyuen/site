@@ -16,6 +16,24 @@ export async function getStaticProps() {
         src: `https://res.cloudinary.com/mikey-baby/image/upload/v${version}/${public_id}.avif`,
         width,
         height,
+        srcSet: [
+          {
+            src: `https://res.cloudinary.com/mikey-baby/image/upload/w_150/v${version}/${public_id}.avif`,
+            width: 150,
+          },
+          {
+            src: `https://res.cloudinary.com/mikey-baby/image/upload/w_375/v${version}/${public_id}.avif`,
+            width: 375,
+          },
+          {
+            src: `https://res.cloudinary.com/mikey-baby/image/upload/w_500/v${version}/${public_id}.avif`,
+            width: 500,
+          },
+          {
+            src: `https://res.cloudinary.com/mikey-baby/image/upload/w_750/v${version}/${public_id}.avif`,
+            width: 750,
+          },
+        ],
       };
     })
     .sort((a, b) => {
@@ -34,7 +52,7 @@ export async function getStaticProps() {
 }
 
 export default function OurAdventures({ photos }) {
-  const [showAlbum, setShowAlbum] = useState(false);
+  const [showAlbum, setShowAlbum] = useState(true);
   const [showError, setShowError] = useState(false);
   const [index, setIndex] = useState(-1);
 
@@ -64,7 +82,7 @@ export default function OurAdventures({ photos }) {
       {showAlbum ? (
         <>
           <PhotoAlbum
-            layout="rows"
+            layout="masonry"
             photos={photos}
             onClick={({ index: current }) => setIndex(current)}
           />
