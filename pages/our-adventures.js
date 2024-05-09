@@ -48,11 +48,14 @@ export async function getStaticProps() {
       const [dateB] = b.src.match(/\d{4}-\d{2}-\d{2}/);
       return new Date(dateA) - new Date(dateB);
     });
-  return { props: { componentKey: "our-adventures", photos } };
+  return {
+    props: { componentKey: "our-adventures", photos },
+    revalidate: 3600,
+  };
 }
 
 export default function OurAdventures({ photos }) {
-  const [showAlbum, setShowAlbum] = useState(false);
+  const [showAlbum, setShowAlbum] = useState(true);
   const [showError, setShowError] = useState(false);
   const [index, setIndex] = useState(-1);
 
