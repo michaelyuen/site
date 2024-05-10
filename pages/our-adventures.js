@@ -55,7 +55,7 @@ export async function getStaticProps() {
 }
 
 export default function OurAdventures({ photos }) {
-  const [showAlbum, setShowAlbum] = useState(true);
+  const [showAlbum, setShowAlbum] = useState(false);
   const [showError, setShowError] = useState(false);
   const [index, setIndex] = useState(-1);
 
